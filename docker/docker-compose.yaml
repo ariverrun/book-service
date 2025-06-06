@@ -1,0 +1,35 @@
+services:
+  # db:
+  #   image: postgres:${POSTGRES_VERSION:-17}-alpine
+  #   environment:
+  #     POSTGRES_DB: ${POSTGRES_DB:-app}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+  #     POSTGRES_USER: ${POSTGRES_USER:-app}
+  #   healthcheck:
+  #     test: ["CMD", "pg_isready", "-d", "${POSTGRES_DB:-app}", "-U", "${POSTGRES_USER:-app}"]
+  #     timeout: 5s
+  #     retries: 5
+  #     start_period: 60s
+  #   volumes:
+  #     - database_data:/var/lib/postgresql/data:rw
+  #   networks:
+  #     - default
+  #     - book-service-network
+
+  app:
+    container_name: book-service-go-app
+    build:
+      context: './../'
+      dockerfile: 'docker/go/Dockerfile'
+    # depends_on:
+    #   - db
+    networks:
+      - default
+      - book-service-network
+
+volumes:
+  database_data:
+
+networks:
+  book-service-network:
+    external: true
