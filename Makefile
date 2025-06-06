@@ -40,4 +40,4 @@ dc_logs_app:
 ##################
 
 main:
-	${DOCKER_COMPOSE_APP_EXEC} go run src/main.go
+	${DOCKER_COMPOSE_APP_EXEC} go run main.go

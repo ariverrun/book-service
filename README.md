@@ -23,3 +23,9 @@ make dc_build
 ```bash
 make dc_up
 ```
+
+5. Run application
+
+```bash
+make main
+```
