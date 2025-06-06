@@ -34,3 +34,10 @@ dc_enter_app:
 
 dc_logs_app:
 	${DOCKER_COMPOSE} logs app
+
+##################
+## App
+##################
+
+main:
+	${DOCKER_COMPOSE_APP_EXEC} go run src/main.go

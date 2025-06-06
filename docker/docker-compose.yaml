@@ -22,7 +22,7 @@ services:
       context: './../'
       dockerfile: 'docker/go/Dockerfile'
     # depends_on:
-    #   - db
+    #   - db 
     networks:
       - default
       - book-service-network
